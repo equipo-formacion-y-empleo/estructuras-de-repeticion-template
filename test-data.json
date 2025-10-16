@@ -1,0 +1,139 @@
+{
+  "exercises": [
+    "Exercise01a_CollatzSequence",
+    "Exercise01b_ServerRetry",
+    "Exercise01c_BinarySearch",
+    "Exercise02a_BatchProcessing",
+    "Exercise02b_EuclideanGCD",
+    "Exercise02c_PasswordAuthentication",
+    "Exercise03a_MonthlyReports",
+    "Exercise03b_LoLRankedAnalyzer",
+    "Exercise03c_StreamRevenue",
+    "Exercise04a_SalesCommission",
+    "Exercise04b_HospitalBedMonitor",
+    "Exercise04c_ServerLatencyAnalyzer",
+    "Exercise05a_MultiplicationTable",
+    "Exercise05b_TeslaManufacturingCosts",
+    "Exercise05c_ScheduleConflict"
+  ],
+  "testCases": {
+    "Exercise01a_CollatzSequence": [
+      {"arguments": ["5"], "expectedOutputs": ["Número inicial: 5","Longitud de secuencia: 6","Secuencia: 5,16,8,4,2,1"], "description": "Secuencia desde 5"},
+      {"arguments": ["1"], "expectedOutputs": ["Número inicial: 1","Longitud de secuencia: 1","Secuencia: 1"], "description": "Caso base: empieza en 1"},
+      {"arguments": ["16"], "expectedOutputs": ["Número inicial: 16","Longitud de secuencia: 5","Secuencia: 16,8,4,2,1"], "description": "Potencia de 2: solo divisiones"},
+      {"arguments": ["100"], "expectedOutputs": ["Número inicial: 100","Longitud de secuencia: 26","Secuencia: 100,50,25,76,38,19,58,29,88,44,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1"], "description": "Número grande (100)"},
+      {"arguments": ["10"], "expectedOutputs": ["Número inicial: 10","Longitud de secuencia: 7","Secuencia: 10,5,16,8,4,2,1"], "description": "Número par común"}
+    ],
+    "Exercise01b_ServerRetry": [
+      {"arguments": ["3","5","1000"], "expectedOutputs": ["Intento 1 fallido. Esperando 1000ms...","Intento 2 fallido. Esperando 2000ms...","Conexión exitosa en el intento 3"], "description": "Conecta en tercer intento"},
+      {"arguments": ["6","5","500"], "expectedOutputs": ["Intento 1 fallido. Esperando 500ms...","Intento 2 fallido. Esperando 1000ms...","Intento 3 fallido. Esperando 2000ms...","Intento 4 fallido. Esperando 4000ms...","Intento 5 fallido. Esperando 8000ms...","Conexión fallida después de 5 intentos"], "description": "Usa todos los intentos permitidos"},
+      {"arguments": ["2","2","1000"], "expectedOutputs": ["Intento 1 fallido. Esperando 1000ms...","Conexión exitosa en el intento 2"], "description": "Conecta en segundo intento"},
+      {"arguments": ["0","3","100"], "expectedOutputs": ["Intento 1 fallido. Esperando 100ms...","Intento 2 fallido. Esperando 200ms...","Intento 3 fallido. Esperando 400ms...","Conexión fallida después de 3 intentos"], "description": "Nunca conecta (successAttempt=0)"},
+      {"arguments": ["4","3","200"], "expectedOutputs": ["Intento 1 fallido. Esperando 200ms...","Intento 2 fallido. Esperando 400ms...","Intento 3 fallido. Esperando 800ms...","Conexión fallida después de 3 intentos"], "description": "Falla todos los intentos"},
+      {"arguments": ["3","3","1000"], "expectedOutputs": ["Intento 1 fallido. Esperando 1000ms...","Intento 2 fallido. Esperando 2000ms...","Conexión exitosa en el intento 3"], "description": "Conecta en último intento"},
+      {"arguments": ["1","5","100"], "expectedOutputs": ["Conexión exitosa en el intento 1"], "description": "Conecta inmediatamente"}
+    ],
+    "Exercise01c_BinarySearch": [
+      {"arguments": ["1,3,5,7,9,11,13,15","7"], "expectedOutputs": ["Encontrado en índice: 3"], "description": "Encontrado en el medio"},
+      {"arguments": ["2,4,6,8,10,12,14,16,18,20","15"], "expectedOutputs": ["No encontrado: -1"], "description": "Elemento no existe"},
+      {"arguments": ["10,20,30,40,50,60,70","10"], "expectedOutputs": ["Encontrado en índice: 0"], "description": "Primer elemento"},
+      {"arguments": ["5,10,15,20,25,30,35,40","40"], "expectedOutputs": ["Encontrado en índice: 7"], "description": "Último elemento"},
+      {"arguments": ["1","1"], "expectedOutputs": ["Encontrado en índice: 0"], "description": "Array con un solo elemento"},
+      {"arguments": ["1,2,3,4,5,6,7,8,9,10","5"], "expectedOutputs": ["Encontrado en índice: 4"], "description": "Array secuencial"}
+    ],
+    "Exercise02a_BatchProcessing": [
+      {"arguments": ["100,200,150"], "expectedOutputs": ["Procesando lote 1: 100 items","Procesando lote 2: 200 items","Procesando lote 3: 150 items","Procesamiento completado. Total: 450 items"], "description": "Procesa tres lotes"},
+      {"arguments": ["50,75"], "expectedOutputs": ["Procesando lote 1: 50 items","Procesando lote 2: 75 items","Procesamiento completado. Total: 125 items"], "description": "Dos lotes exitosos"},
+      {"arguments": ["100"], "expectedOutputs": ["Procesando lote 1: 100 items","Procesamiento completado. Total: 100 items"], "description": "Un solo lote"},
+      {"arguments": ["10,20,30"], "expectedOutputs": ["Procesando lote 1: 10 items","Procesando lote 2: 20 items","Procesando lote 3: 30 items","Procesamiento completado. Total: 60 items"], "description": "Tres lotes pequeños"},
+      {"arguments": ["100,200"], "expectedOutputs": ["Procesando lote 1: 100 items","Procesando lote 2: 200 items","Procesamiento completado. Total: 300 items"], "description": "Dos lotes grandes"},
+      {"arguments": ["1,1,1,1,1"], "expectedOutputs": ["Procesando lote 1: 1 items","Procesando lote 2: 1 items","Procesando lote 3: 1 items","Procesando lote 4: 1 items","Procesando lote 5: 1 items","Procesamiento completado. Total: 5 items"], "description": "Muchos lotes pequeños"}
+    ],
+    "Exercise02b_EuclideanGCD": [
+      {"arguments": ["48","18"], "expectedOutputs": ["6"], "description": "Caso típico: MCD de 48 y 18"},
+      {"arguments": ["100","50"], "expectedOutputs": ["50"], "description": "Un número es múltiplo del otro"},
+      {"arguments": ["17","13"], "expectedOutputs": ["1"], "description": "Números primos entre sí"},
+      {"arguments": ["1071","462"], "expectedOutputs": ["21"], "description": "Números grandes"},
+      {"arguments": ["12","12"], "expectedOutputs": ["12"], "description": "Números iguales"},
+      {"arguments": ["1","100"], "expectedOutputs": ["1"], "description": "MCD con 1"}
+    ],
+    "Exercise02c_PasswordAuthentication": [
+      {"arguments": ["SecurePass123","password,Pass123,SecurePass123","3"], "expectedOutputs": ["Intento 1: Contraseña incorrecta. 2 intentos restantes","Intento 2: Contraseña incorrecta. 1 intentos restantes","Intento 3: Contraseña correcta","Acceso concedido"], "description": "Autenticación exitosa en tercer intento"},
+      {"arguments": ["Admin2024","admin,admin123,password123","3"], "expectedOutputs": ["Intento 1: Contraseña incorrecta. 2 intentos restantes","Intento 2: Contraseña incorrecta. 1 intentos restantes","Intento 3: Contraseña incorrecta","Cuenta bloqueada por exceder intentos máximos"], "description": "Cuenta bloqueada por agotar intentos"},
+      {"arguments": ["MyPass","admin,MyPass,other","5"], "expectedOutputs": ["Intento 1: Contraseña incorrecta. 4 intentos restantes","Intento 2: Contraseña correcta","Acceso concedido"], "description": "Autenticación en segundo intento"},
+      {"arguments": ["Secret999","a,b,c,d,Secret999","5"], "expectedOutputs": ["Intento 1: Contraseña incorrecta. 4 intentos restantes","Intento 2: Contraseña incorrecta. 3 intentos restantes","Intento 3: Contraseña incorrecta. 2 intentos restantes","Intento 4: Contraseña incorrecta. 1 intentos restantes","Intento 5: Contraseña correcta","Acceso concedido"], "description": "Éxito en el último intento permitido"},
+      {"arguments": ["Pass123","Pass123","1"], "expectedOutputs": ["Intento 1: Contraseña correcta","Acceso concedido"], "description": "Autenticación inmediata en primer intento"},
+      {"arguments": ["test","wrong","1"], "expectedOutputs": ["Intento 1: Contraseña incorrecta","Cuenta bloqueada por exceder intentos máximos"], "description": "Bloqueada en único intento"}
+    ],
+    "Exercise03a_MonthlyReports": [
+      {"arguments": ["1200,1500,1300,1400,1600,1550,1700,1650,1800,1750,1900,2000"], "expectedOutputs": ["Reporte Enero: 1200 unidades","Reporte Febrero: 1500 unidades","Reporte Marzo: 1300 unidades","Reporte Abril: 1400 unidades","Reporte Mayo: 1600 unidades","Reporte Junio: 1550 unidades","Reporte Julio: 1700 unidades","Reporte Agosto: 1650 unidades","Reporte Septiembre: 1800 unidades","Reporte Octubre: 1750 unidades","Reporte Noviembre: 1900 unidades","Reporte Diciembre: 2000 unidades","Total: 19350 unidades"], "description": "Año completo con datos"},
+      {"arguments": ["1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000"], "expectedOutputs": ["Reporte Enero: 1000 unidades","Reporte Febrero: 1000 unidades","Reporte Marzo: 1000 unidades","Reporte Abril: 1000 unidades","Reporte Mayo: 1000 unidades","Reporte Junio: 1000 unidades","Reporte Julio: 1000 unidades","Reporte Agosto: 1000 unidades","Reporte Septiembre: 1000 unidades","Reporte Octubre: 1000 unidades","Reporte Noviembre: 1000 unidades","Reporte Diciembre: 1000 unidades","Total: 12000 unidades"], "description": "Datos constantes todo el año"},
+      {"arguments": ["100,200,300,400,500,600,700,800,900,1000,1100,1200"], "expectedOutputs": ["Reporte Enero: 100 unidades","Reporte Febrero: 200 unidades","Reporte Marzo: 300 unidades","Reporte Abril: 400 unidades","Reporte Mayo: 500 unidades","Reporte Junio: 600 unidades","Reporte Julio: 700 unidades","Reporte Agosto: 800 unidades","Reporte Septiembre: 900 unidades","Reporte Octubre: 1000 unidades","Reporte Noviembre: 1100 unidades","Reporte Diciembre: 1200 unidades","Total: 7800 unidades"], "description": "Datos incrementales"},
+      {"arguments": ["0,0,0,0,0,0,0,0,0,0,0,0"], "expectedOutputs": ["Reporte Enero: 0 unidades","Reporte Febrero: 0 unidades","Reporte Marzo: 0 unidades","Reporte Abril: 0 unidades","Reporte Mayo: 0 unidades","Reporte Junio: 0 unidades","Reporte Julio: 0 unidades","Reporte Agosto: 0 unidades","Reporte Septiembre: 0 unidades","Reporte Octubre: 0 unidades","Reporte Noviembre: 0 unidades","Reporte Diciembre: 0 unidades","Total: 0 unidades"], "description": "Sin ventas todo el año"},
+      {"arguments": ["500,600,550,700,750,800,850,900,950,1000,1050,1100"], "expectedOutputs": ["Reporte Enero: 500 unidades","Reporte Febrero: 600 unidades","Reporte Marzo: 550 unidades","Reporte Abril: 700 unidades","Reporte Mayo: 750 unidades","Reporte Junio: 800 unidades","Reporte Julio: 850 unidades","Reporte Agosto: 900 unidades","Reporte Septiembre: 950 unidades","Reporte Octubre: 1000 unidades","Reporte Noviembre: 1050 unidades","Reporte Diciembre: 1100 unidades","Total: 9750 unidades"], "description": "Crecimiento constante mensual"}
+    ],
+    "Exercise03b_LoLRankedAnalyzer": [
+      {"arguments": ["+18,-15,+20,-12,+17"], "expectedOutputs": ["Partida 1: +18 LP (Total: 18 LP)","Partida 2: -15 LP (Total: 3 LP)","Partida 3: +20 LP (Total: 23 LP)","Partida 4: -12 LP (Total: 11 LP)","Partida 5: +17 LP (Total: 28 LP)","LP final: 28","Promedio de cambio: +5 LP por partida","Victorias: 3, Derrotas: 2","Resultado: Se mantiene en división"], "description": "Sesión mixta estándar"},
+      {"arguments": ["+22,+20,+25,+18,+20"], "expectedOutputs": ["Partida 1: +22 LP (Total: 22 LP)","Partida 2: +20 LP (Total: 42 LP)","Partida 3: +25 LP (Total: 67 LP)","Partida 4: +18 LP (Total: 85 LP)","Partida 5: +20 LP (Total: 105 LP)","LP final: 105","Promedio de cambio: +21 LP por partida","Victorias: 5, Derrotas: 0","Resultado: Promoción a siguiente división"], "description": "Promoción exitosa"},
+      {"arguments": ["-18,-15,-20,-12"], "expectedOutputs": ["Partida 1: -18 LP (Total: -18 LP)","Partida 2: -15 LP (Total: -33 LP)","Partida 3: -20 LP (Total: -53 LP)","Partida 4: -12 LP (Total: -65 LP)","LP final: -65","Promedio de cambio: -16 LP por partida","Victorias: 0, Derrotas: 4","Resultado: Descendió de división"], "description": "Descenso de división"},
+      {"arguments": ["+20,-15,+18,-12,+15,-10"], "expectedOutputs": ["Partida 1: +20 LP (Total: 20 LP)","Partida 2: -15 LP (Total: 5 LP)","Partida 3: +18 LP (Total: 23 LP)","Partida 4: -12 LP (Total: 11 LP)","Partida 5: +15 LP (Total: 26 LP)","Partida 6: -10 LP (Total: 16 LP)","LP final: 16","Promedio de cambio: +2 LP por partida","Victorias: 3, Derrotas: 3","Resultado: Se mantiene en división"], "description": "Sesión equilibrada"},
+      {"arguments": ["+25,+22,+20,+18"], "expectedOutputs": ["Partida 1: +25 LP (Total: 25 LP)","Partida 2: +22 LP (Total: 47 LP)","Partida 3: +20 LP (Total: 67 LP)","Partida 4: +18 LP (Total: 85 LP)","LP final: 85","Promedio de cambio: +21 LP por partida","Victorias: 4, Derrotas: 0","Resultado: Se mantiene en división"], "description": "Casi promoción"},
+      {"arguments": ["+15,-20,+25"], "expectedOutputs": ["Partida 1: +15 LP (Total: 15 LP)","Partida 2: -20 LP (Total: -5 LP)","Partida 3: +25 LP (Total: 20 LP)","LP final: 20","Promedio de cambio: +6 LP por partida","Victorias: 2, Derrotas: 1","Resultado: Se mantiene en división"], "description": "Recuperación después de pérdida"}
+    ],
+  "Exercise03c_StreamRevenue": [
+      {"arguments": ["15,20,18,22,16","4,4,4,4,4"], "expectedOutputs": ["Stream 1: 60","Stream 2: 80","Stream 3: 72","Stream 4: 88","Stream 5: 64","Puntos totales: 364"], "description": "Cinco streams duración estándar"},
+      {"arguments": ["25,30,20","4,5,3"], "expectedOutputs": ["Stream 1: 100","Stream 2: 165","Stream 3: 60","Puntos totales: 325"], "description": "Diferentes duraciones de stream"},
+      {"arguments": ["50,50","4,4"], "expectedOutputs": ["Stream 1: 200","Stream 2: 200","Puntos totales: 400"], "description": "Misma actividad y duración"},
+      {"arguments": ["100","1"], "expectedOutputs": ["Stream 1: 100","Puntos totales: 100"], "description": "Un solo stream corto"},
+      {"arguments": ["12,15,17,20","4,3,3,2"], "expectedOutputs": ["Stream 1: 48","Stream 2: 45","Stream 3: 51","Stream 4: 40","Puntos totales: 184"], "description": "Duraciones decrecientes"},
+      {"arguments": ["20,25","5,6"], "expectedOutputs": ["Stream 1: 110","Stream 2: 175","Puntos totales: 285"], "description": "Con multiplicador por streams largos"},
+      {"arguments": ["10","0"], "expectedOutputs": ["Stream 1: 0","Puntos totales: 0"], "description": "Stream sin duración"}
+    ],
+    "Exercise04a_SalesCommission": [
+      {"arguments": ["100,200,150,300"], "expectedOutputs": ["Comisión total: 37"], "description": "Cuatro ventas normales"},
+      {"arguments": ["1000"], "expectedOutputs": ["Comisión total: 50"], "description": "Una sola venta grande"},
+      {"arguments": ["50,50,50,50,50"], "expectedOutputs": ["Comisión total: 12"], "description": "Múltiples ventas pequeñas"},
+      {"arguments": ["0,100,0,200"], "expectedOutputs": ["Comisión total: 15"], "description": "Algunas ventas en cero"},
+      {"arguments": ["2500,1500,3000"], "expectedOutputs": ["Comisión total: 350"], "description": "Ventas altas"},
+      {"arguments": ["500,500,500,500"], "expectedOutputs": ["Comisión total: 100"], "description": "Ventas medianas iguales"}
+    ],
+    "Exercise04b_HospitalBedMonitor": [
+      {"arguments": ["25,8,15,3,50","10"], "expectedOutputs": ["ALERTA: Servicio 2 en estado crítico con 8 camas (< 10)","ALERTA: Servicio 4 en estado crítico con 3 camas (< 10)","Capacidad total del hospital: 101 camas","Servicios en estado crítico: 2 de 5 (40%)"], "description": "Algunos servicios críticos"},
+      {"arguments": ["20,30,25,40","10"], "expectedOutputs": ["Capacidad total del hospital: 115 camas","Servicios en estado crítico: 0 de 4 (0%)"], "description": "Todos con capacidad suficiente"},
+      {"arguments": ["2,5,3,8","10"], "expectedOutputs": ["ALERTA: Servicio 1 en estado crítico con 2 camas (< 10)","ALERTA: Servicio 2 en estado crítico con 5 camas (< 10)","ALERTA: Servicio 3 en estado crítico con 3 camas (< 10)","ALERTA: Servicio 4 en estado crítico con 8 camas (< 10)","Capacidad total del hospital: 18 camas","Servicios en estado crítico: 4 de 4 (100%)"], "description": "Hospital saturado"},
+      {"arguments": ["15","10"], "expectedOutputs": ["Capacidad total del hospital: 15 camas","Servicios en estado crítico: 0 de 1 (0%)"], "description": "Un solo servicio"},
+      {"arguments": ["10,20,30,40,50","25"], "expectedOutputs": ["ALERTA: Servicio 1 en estado crítico con 10 camas (< 25)","ALERTA: Servicio 2 en estado crítico con 20 camas (< 25)","Capacidad total del hospital: 150 camas","Servicios en estado crítico: 2 de 5 (40%)"], "description": "Umbral alto"},
+      {"arguments": ["10,10,10","10"], "expectedOutputs": ["Capacidad total del hospital: 30 camas","Servicios en estado crítico: 0 de 3 (0%)"], "description": "Todos en el límite exacto"}
+    ],
+    "Exercise04c_ServerLatencyAnalyzer": [
+      {"arguments": ["5,15,30,0,20"], "expectedOutputs": ["5ms - Excelente","15ms - Aceptable","30ms - Lenta","0ms - Excelente","20ms - Aceptable","Resumen: 2 excelentes, 2 aceptables, 1 lentas"], "description": "Mezcla de latencias"},
+      {"arguments": ["0,5,5,8"], "expectedOutputs": ["0ms - Excelente","5ms - Excelente","5ms - Excelente","8ms - Excelente","Resumen: 4 excelentes, 0 aceptables, 0 lentas"], "description": "Solo latencias excelentes"},
+      {"arguments": ["26,30,35,40"], "expectedOutputs": ["26ms - Lenta","30ms - Lenta","35ms - Lenta","40ms - Lenta","Resumen: 0 excelentes, 0 aceptables, 4 lentas"], "description": "Solo latencias lentas"},
+      {"arguments": ["20"], "expectedOutputs": ["20ms - Aceptable","Resumen: 0 excelentes, 1 aceptables, 0 lentas"], "description": "Una sola medición"},
+      {"arguments": ["10,25"], "expectedOutputs": ["10ms - Aceptable","25ms - Aceptable","Resumen: 0 excelentes, 2 aceptables, 0 lentas"], "description": "Latencias en los límites"},
+      {"arguments": ["9,10,25,26"], "expectedOutputs": ["9ms - Excelente","10ms - Aceptable","25ms - Aceptable","26ms - Lenta","Resumen: 1 excelentes, 2 aceptables, 1 lentas"], "description": "Prueba de límites de clasificación"}
+    ],
+    "Exercise05a_MultiplicationTable": [
+      {"arguments": ["2","3"], "expectedOutputs": ["1 x 1 = 1","1 x 2 = 2","1 x 3 = 3","2 x 1 = 2","2 x 2 = 4","2 x 3 = 6","Suma total: 18"], "description": "Tabla 2x3 básica"},
+      {"arguments": ["3","3"], "expectedOutputs": ["1 x 1 = 1","1 x 2 = 2","1 x 3 = 3","2 x 1 = 2","2 x 2 = 4","2 x 3 = 6","3 x 1 = 3","3 x 2 = 6","3 x 3 = 9","Suma total: 36"], "description": "Tabla cuadrada 3x3"},
+      {"arguments": ["1","5"], "expectedOutputs": ["1 x 1 = 1","1 x 2 = 2","1 x 3 = 3","1 x 4 = 4","1 x 5 = 5","Suma total: 15"], "description": "Una sola fila"},
+      {"arguments": ["5","1"], "expectedOutputs": ["1 x 1 = 1","2 x 1 = 2","3 x 1 = 3","4 x 1 = 4","5 x 1 = 5","Suma total: 15"], "description": "Una sola columna"},
+      {"arguments": ["4","4"], "expectedOutputs": ["1 x 1 = 1","1 x 2 = 2","1 x 3 = 3","1 x 4 = 4","2 x 1 = 2","2 x 2 = 4","2 x 3 = 6","2 x 4 = 8","3 x 1 = 3","3 x 2 = 6","3 x 3 = 9","3 x 4 = 12","4 x 1 = 4","4 x 2 = 8","4 x 3 = 12","4 x 4 = 16","Suma total: 100"], "description": "Tabla cuadrada 4x4"}
+    ],
+    "Exercise05b_TeslaManufacturingCosts": [
+      {"arguments": ["5,7,6","3,1"], "expectedOutputs": ["Modelo 1 (3h):","  Gigafactory 1: $11k","  Gigafactory 2: $13k","  Gigafactory 3: $12k","Modelo 2 (1h):","  Gigafactory 1: $7k","  Gigafactory 2: $9k","  Gigafactory 3: $8k","Costo total de producción: $60k"], "description": "Dos modelos en tres Gigafactories"},
+      {"arguments": ["10,15","5,2"], "expectedOutputs": ["Modelo 1 (5h):","  Gigafactory 1: $20k","  Gigafactory 2: $25k","Modelo 2 (2h):","  Gigafactory 1: $14k","  Gigafactory 2: $19k","Costo total de producción: $78k"], "description": "Dos modelos en dos fábricas"},
+      {"arguments": ["8","4"], "expectedOutputs": ["Modelo 1 (4h):","  Gigafactory 1: $16k","Costo total de producción: $16k"], "description": "Un modelo en una fábrica"},
+      {"arguments": ["5,10,15","2,3,1"], "expectedOutputs": ["Modelo 1 (2h):","  Gigafactory 1: $9k","  Gigafactory 2: $14k","  Gigafactory 3: $19k","Modelo 2 (3h):","  Gigafactory 1: $11k","  Gigafactory 2: $16k","  Gigafactory 3: $21k","Modelo 3 (1h):","  Gigafactory 1: $7k","  Gigafactory 2: $12k","  Gigafactory 3: $17k","Costo total de producción: $126k"], "description": "Tres modelos en tres fábricas"},
+      {"arguments": ["10","0"], "expectedOutputs": ["Modelo 1 (0h):","  Gigafactory 1: $10k","Costo total de producción: $10k"], "description": "Modelo sin tiempo de ensamblaje"}
+    ],
+    "Exercise05c_ScheduleConflict": [
+  {"arguments": ["9,12,13,14","2,1,2,1"], "expectedOutputs": ["CONFLICTO: 14:00 - 15:00 | Cita C (13:00 - 15:00) y Cita D (14:00 - 15:00)","Total de conflictos detectados: 1"], "description": "Un conflicto entre dos citas"},
+  {"arguments": ["9,11,13","2,2,2"], "expectedOutputs": ["Total de conflictos detectados: 0"], "description": "Sin conflictos"},
+  {"arguments": ["10,10,11,12","2,3,2,1"], "expectedOutputs": ["CONFLICTO: 10:00 - 12:00 | Cita A (10:00 - 12:00) y Cita B (10:00 - 13:00)","CONFLICTO: 11:00 - 12:00 | Cita A (10:00 - 12:00) y Cita C (11:00 - 13:00)","CONFLICTO: 11:00 - 13:00 | Cita B (10:00 - 13:00) y Cita C (11:00 - 13:00)","CONFLICTO: 12:00 - 13:00 | Cita B (10:00 - 13:00) y Cita D (12:00 - 13:00)","CONFLICTO: 12:00 - 13:00 | Cita C (11:00 - 13:00) y Cita D (12:00 - 13:00)","Total de conflictos detectados: 5"], "description": "Múltiples conflictos"},
+  {"arguments": ["8,10,13","2,2,2"], "expectedOutputs": ["Total de conflictos detectados: 0"], "description": "Citas consecutivas sin solapamiento"},
+  {"arguments": ["9,10","3,2"], "expectedOutputs": ["CONFLICTO: 10:00 - 12:00 | Cita A (9:00 - 12:00) y Cita B (10:00 - 12:00)","Total de conflictos detectados: 1"], "description": "Dos citas con conflicto"},
+  {"arguments": ["9","2"], "expectedOutputs": ["Total de conflictos detectados: 0"], "description": "Una sola cita"}
+    ]
+  }
+}

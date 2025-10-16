@@ -1,0 +1,29 @@
+name: Autograding
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  autograding:
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Run autograding tests
+      shell: pwsh
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: 'false'
+        LANG: 'es-ES'
+        LC_ALL: 'es-ES.UTF-8'
+      run: |
+        [System.Threading.Thread]::CurrentThread.CurrentCulture = [System.Globalization.CultureInfo]::new('es-ES')
+        [System.Threading.Thread]::CurrentThread.CurrentUICulture = [System.Globalization.CultureInfo]::new('es-ES')
+        ./Test-Exercises.ps1 -Verbose
