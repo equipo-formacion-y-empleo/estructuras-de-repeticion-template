@@ -17,7 +17,7 @@ Un argumento por línea de comandos:
 ## Salida
 
 ```
-Comisión total: [total]€
+Comisión total: [total]
 ```
 
 ## Ejemplos
@@ -26,27 +26,27 @@ Comisión total: [total]€
 **Entrada:** `1000,1500,2000,2500,3000`  
 **Salida:**
 ```
-Comisión total: 500€
+Comisión total: 500
 ```
 
 ### Ejemplo 2
 **Entrada:** `500,750,1250`  
 **Salida:**
 ```
-Comisión total: 125€
+Comisión total: 125
 ```
 
 ### Ejemplo 3
 **Entrada:** `10000`  
 **Salida:**
 ```
-Comisión total: 500€
+Comisión total: 500
 ```
 
 ## Notas
 
 - Usa un bucle **FOREACH** para iterar sobre las ventas.
 - La comisión es siempre el 5% de cada venta.
-- Formato de salida: "Comisión total: " seguido del importe y €.
+- Formato de salida: "Comisión total: " seguido del importe.
 - No modifiques el array original.
 - Todas las ventas y comisiones se manejan como números enteros.

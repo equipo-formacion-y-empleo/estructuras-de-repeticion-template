@@ -24,8 +24,7 @@ El programa recibe 2 argumentos por línea de comandos:
 ## Salida
 
 ```
-Números: <a>, <b>
-MCD (Máximo Común Divisor): <gcd>
+Máximo Común Divisor
 ```
 
 ## Ejemplos
