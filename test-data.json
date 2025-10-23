@@ -34,12 +34,12 @@
       {"arguments": ["1","5","100"], "expectedOutputs": ["Conexión exitosa en el intento 1"], "description": "Conecta inmediatamente"}
     ],
     "Exercise01c_BinarySearch": [
-      {"arguments": ["1,3,5,7,9,11,13,15","7"], "expectedOutputs": ["Encontrado en índice: 3"], "description": "Encontrado en el medio"},
-      {"arguments": ["2,4,6,8,10,12,14,16,18,20","15"], "expectedOutputs": ["No encontrado: -1"], "description": "Elemento no existe"},
-      {"arguments": ["10,20,30,40,50,60,70","10"], "expectedOutputs": ["Encontrado en índice: 0"], "description": "Primer elemento"},
-      {"arguments": ["5,10,15,20,25,30,35,40","40"], "expectedOutputs": ["Encontrado en índice: 7"], "description": "Último elemento"},
-      {"arguments": ["1","1"], "expectedOutputs": ["Encontrado en índice: 0"], "description": "Array con un solo elemento"},
-      {"arguments": ["1,2,3,4,5,6,7,8,9,10","5"], "expectedOutputs": ["Encontrado en índice: 4"], "description": "Array secuencial"}
+      {"arguments": ["1,3,5,7,9,11,13,15","7"], "expectedOutputs": ["Encontrado en índice 3"], "description": "Encontrado en el medio"},
+      {"arguments": ["2,4,6,8,10,12,14,16,18,20","15"], "expectedOutputs": ["No encontrado"], "description": "Elemento no existe"},
+      {"arguments": ["10,20,30,40,50,60,70","10"], "expectedOutputs": ["Encontrado en índice 0"], "description": "Primer elemento"},
+      {"arguments": ["5,10,15,20,25,30,35,40","40"], "expectedOutputs": ["Encontrado en índice 7"], "description": "Último elemento"},
+      {"arguments": ["1","1"], "expectedOutputs": ["Encontrado en índice 0"], "description": "Array con un solo elemento"},
+      {"arguments": ["1,2,3,4,5,6,7,8,9,10","5"], "expectedOutputs": ["Encontrado en índice 4"], "description": "Array secuencial"}
     ],
     "Exercise02a_BatchProcessing": [
       {"arguments": ["100,200,150"], "expectedOutputs": ["Procesando lote 1: 100 items","Procesando lote 2: 200 items","Procesando lote 3: 150 items","Procesamiento completado. Total: 450 items"], "description": "Procesa tres lotes"},

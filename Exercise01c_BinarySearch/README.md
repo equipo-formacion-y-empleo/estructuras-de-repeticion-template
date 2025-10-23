@@ -32,12 +32,12 @@ El programa recibe 2 argumentos por línea de comandos:
 
 Si el elemento se encuentra:
 ```
-Encontrado en índice: <index>
+Encontrado en índice <index>
 ```
 
 Si no se encuentra:
 ```
-No encontrado: -1
+No encontrado
 ```
 
 ## Ejemplos
@@ -48,7 +48,7 @@ dotnet run -- "2,5,8,12,16,23,38,45,56,67,78" 23
 ```
 **Salida:**
 ```
-Encontrado en índice: 5
+Encontrado en índice 5
 ```
 
 ### Ejemplo 2: Elemento no encontrado
@@ -57,7 +57,7 @@ dotnet run -- "1,3,5,7,9,11,13,15" 10
 ```
 **Salida:**
 ```
-No encontrado: -1
+No encontrado
 ```
 
 ### Ejemplo 3: Elemento en el inicio
@@ -66,7 +66,7 @@ dotnet run -- "10,20,30,40,50" 10
 ```
 **Salida:**
 ```
-Encontrado en índice: 0
+Encontrado en índice 0
 ```
 
 ### Ejemplo 4: Elemento al final
@@ -75,12 +75,12 @@ dotnet run -- "5,10,15,20,25,30" 30
 ```
 **Salida:**
 ```
-Encontrado en índice: 5
+Encontrado en índice 5
 ```
 
 ## Notas
 
 - El índice devuelto debe ser el de la posición real en el array (empezando en 0).
-- Si el valor no se encuentra, imprime exactamente "No encontrado: -1".
+- Si el valor no se encuentra, imprime exactamente "No encontrado".
 - Usa un bucle `while` para implementar la búsqueda binaria, actualizando los límites izquierdo y derecho en cada iteración.
 - Asegúrate de manejar correctamente los casos donde el array tiene un solo elemento o el valor no está presente.
